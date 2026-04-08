@@ -28,6 +28,11 @@ resource "aws_instance" "workstation" {
 }
 
 resource "terraform_data" "cluster_destroy" {
+  triggers_replace = [
+    aws_instance.workstation.id,
+    timestamp()
+    #time stamp for debugging
+  ]
   input = {
     host     = aws_instance.workstation.public_ip
     password = var.ssh_password
