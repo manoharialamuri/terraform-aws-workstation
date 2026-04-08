@@ -28,6 +28,9 @@ cp kubectl /usr/local/bin/kubectl
 curl -sLo /usr/local/bin/kubens https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens
 chmod +x /usr/local/bin/kubens
 
+#k9s
+curl -sS https://webinstall.dev/k9s | bash
+
 # AWS CLI configure for ec2-user
 mkdir -p /home/ec2-user/.aws
 cat <<EOF > /home/ec2-user/.aws/credentials
